@@ -1,1 +1,1 @@
-export { default as default } from './SvelteFlexSlider.svelte';
+export { default as SvelteFlexSlider } from './SvelteFlexSlider.svelte';

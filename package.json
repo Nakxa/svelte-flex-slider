@@ -1,10 +1,21 @@
 {
   "name": "svelte-flex-slider",
-  "version": "1.0.0",
-  "keywords": [],
+  "version": "1.0.5",
+  "keywords": [
+    "svelte",
+    "slider",
+    "carousel",
+    "svelte-slider",
+    "svelte-carousel",
+    "image-slider",
+    "responsive-slider",
+    "gallery",
+    "slideshow",
+    "swiper"
+  ],
+  "license": "MIT",
   "author": "nakxa",
-  "license": "ISC",
-  "description": "",
+  "description": "A flexible and responsive slider/carousel component for Svelte applications",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^15.3.0",

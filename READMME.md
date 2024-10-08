@@ -11,6 +11,7 @@ A flexible and responsive slider component for Svelte applications.
 - Loop option for continuous sliding
 - Touch-friendly navigation
 - Customizable number of visible cards
+- Optional navigation buttons and indicators
 - Easy to integrate and style
 
 ## Installation
@@ -42,6 +43,8 @@ const cards = [
   interval={3000}
   loop={true}
   visibleCards={{ default: 1, 768: 2, 1024: 3 }}
+  showNavButtons={true}
+  showIndicators={true}
 />
 ```
 
@@ -58,10 +61,12 @@ For full documentation and interactive examples, visit our [documentation site](
 | interval | number | 3000 | Interval between slides in milliseconds when autoplay is enabled. |
 | loop | boolean | true | Whether the slider should loop back to the beginning after reaching the end. |
 | visibleCards | object | { default: 1 } | Number of visible cards at different breakpoints. |
+| showNavButtons | boolean | true | Whether to show navigation buttons. |
+| showIndicators | boolean | true | Whether to show slide indicators. |
 
 ## Examples
 
-### Image Slider
+### Image Slider with Custom Navigation
 
 ```svelte
 <SvelteFlexSlider
@@ -74,10 +79,12 @@ For full documentation and interactive examples, visit our [documentation site](
   interval={3000}
   loop={true}
   visibleCards={{ default: 1 }}
+  showNavButtons={true}
+  showIndicators={false}
 />
 ```
 
-### Product Showcase
+### Product Showcase with Indicators
 
 ```svelte
 <SvelteFlexSlider
@@ -90,6 +97,8 @@ For full documentation and interactive examples, visit our [documentation site](
   interval={3000}
   loop={true}
   visibleCards={{ default: 1, 520: 2, 800: 3 }}
+  showNavButtons={false}
+  showIndicators={true}
 />
 ```
 
