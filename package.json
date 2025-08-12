@@ -1,39 +1,48 @@
 {
-  "name": "svelte-flex-slider",
-  "version": "1.0.5",
-  "keywords": [
-    "svelte",
-    "slider",
-    "carousel",
-    "svelte-slider",
-    "svelte-carousel",
-    "image-slider",
-    "responsive-slider",
-    "gallery",
-    "slideshow",
-    "swiper"
-  ],
-  "license": "MIT",
-  "author": "nakxa",
-  "description": "A flexible and responsive slider/carousel component for Svelte applications",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^28.0.0",
-    "@rollup/plugin-node-resolve": "^15.3.0",
-    "rollup": "^4.24.0",
-    "rollup-plugin-svelte": "^7.2.2",
-    "svelte": "^4.2.19",
-    "svelte-preprocess": "^6.0.3"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build"
-  },
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
-  "svelte": "src/SvelteFlexSlider.svelte",
-  "files": [
-    "src",
-    "dist"
-  ],
-  "type": "module"
+	"name": "myapp",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run prepack",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"prepack": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^6.0.0",
+		"@sveltejs/adapter-static": "^3.0.9",
+		"@sveltejs/kit": "^2.22.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^6.0.0",
+		"publint": "^0.3.2",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"vite": "^7.0.4"
+	},
+	"keywords": [
+		"svelte"
+	]
 }

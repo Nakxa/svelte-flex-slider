@@ -1,130 +1,58 @@
-# Svelte Flex Slider
+# Svelte library
 
-A flexible and responsive slider component for Svelte applications.
+Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
 
-![Svelte Flex Slider Demo](https://raw.githubusercontent.com/Nakxa/svelte-flex-slider-example/main/svelte-flex-slider.webp)
+Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
 
-## Features
+## Creating a project
 
-- Responsive design with customizable breakpoints
-- Autoplay functionality with adjustable interval
-- Loop option for continuous sliding
-- Touch-friendly navigation
-- Customizable number of visible cards
-- Optional navigation buttons and indicators
-- Easy to integrate and style
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Installation
+```sh
+# create a new project in the current directory
+npx sv create
 
-Install Svelte Flex Slider with npm:
-
-```bash
-npm install svelte-flex-slider
+# create a new project in my-app
+npx sv create my-app
 ```
 
-## Usage
+## Developing
 
-Import and use the SvelteFlexSlider component in your Svelte file:
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```svelte
-<script>
-import SvelteFlexSlider from 'svelte-flex-slider';
+```sh
+npm run dev
 
-const cards = [
-  '<div>Slide 1</div>',
-  '<div>Slide 2</div>',
-  '<div>Slide 3</div>'
-];
-</script>
-
-<SvelteFlexSlider
-  {cards}
-  autoplay={true}
-  interval={3000}
-  loop={true}
-  visibleCards={{ default: 1, 768: 2, 1024: 3 }}
-  showNavButtons={true}
-  showIndicators={true}
-/>
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-## Documentation
+Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
 
-For full documentation and interactive examples, visit our [documentation site](https://svelte-flex-slider.nakxa.site/).
+## Building
 
-## API
+To build your library:
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| cards | array | [] | Array of card contents to be displayed in the slider. |
-| autoplay | boolean | true | Whether the slider should autoplay. |
-| interval | number | 3000 | Interval between slides in milliseconds when autoplay is enabled. |
-| loop | boolean | true | Whether the slider should loop back to the beginning after reaching the end. |
-| visibleCards | object | { default: 1 } | Number of visible cards at different breakpoints. |
-| showNavButtons | boolean | true | Whether to show navigation buttons. |
-| showIndicators | boolean | true | Whether to show slide indicators. |
-
-## Examples
-
-### Image Slider with Custom Navigation
-
-```svelte
-<SvelteFlexSlider
-  cards={[
-    '<div><img src="img1.jpg" alt="Slide 1"></div>',
-    '<div><img src="img2.jpg" alt="Slide 2"></div>',
-    '<div><img src="img3.jpg" alt="Slide 3"></div>'
-  ]}
-  autoplay={true}
-  interval={3000}
-  loop={true}
-  visibleCards={{ default: 1 }}
-  showNavButtons={true}
-  showIndicators={false}
-/>
+```sh
+npm pack
 ```
 
-### Product Showcase with Indicators
+To create a production version of your showcase app:
 
-```svelte
-<SvelteFlexSlider
-  cards={[
-    '<div class="product"><img src="product1.jpg" alt="Product 1"><h3>Product 1</h3><p>$19.99</p></div>',
-    '<div class="product"><img src="product2.jpg" alt="Product 2"><h3>Product 2</h3><p>$24.99</p></div>',
-    '<div class="product"><img src="product3.jpg" alt="Product 3"><h3>Product 3</h3><p>$29.99</p></div>'
-  ]}
-  autoplay={false}
-  interval={3000}
-  loop={true}
-  visibleCards={{ default: 1, 520: 2, 800: 3 }}
-  showNavButtons={false}
-  showIndicators={true}
-/>
+```sh
+npm run build
 ```
 
-For more examples and interactive demos, visit our [documentation site](https://svelte-flex-slider.nakxa.site/).
+You can preview the production build with `npm run preview`.
 
-## Styling
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
-Svelte Flex Slider comes with minimal default styling. You can easily customize the appearance by adding your own CSS classes or inline styles to the card contents.
+## Publishing
 
-## Contributing
+Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+To publish your library to [npm](https://www.npmjs.com):
 
-## License
-
-This project is licensed under the MIT License.
-
-## Support
-
-If you encounter any problems or have any questions, please open an issue on the [GitHub repository](https://github.com/Nakxa/svelte-flex-slider-example).
-
-## Acknowledgements
-
-- Thanks to the Svelte community for their amazing tools and support.
-- Icons provided by [Lucide](https://lucide.dev/).
-
----
-
-Made with ❤️ by [Naresh Choudhary (nakxa)](https://github.com/Nakxa)
+```sh
+npm publish
+```
